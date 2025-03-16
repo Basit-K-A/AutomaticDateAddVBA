@@ -1,0 +1,15 @@
+Sub DateTime()
+'
+' DateTime Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+Q
+'
+    Dim i As Integer
+    For i = 1 To 7
+        If Range("B" & i + 1).Value = "" Then ' Check if cell is empty
+            Range("B" & i + 1).Value = Now ' Insert current date and time
+            Range("B" & i + 1 & ":D" & i + 1).Style = "Good"
+            Exit Sub ' Stop after inserting in the first empty cell
+        End If
+    Next i
+End Sub
